@@ -72,3 +72,30 @@ const departments = {
 }
 
 console.log(departments);
+
+console.log(`De afdeling sales heeft ${departments.sales.numberOfEmployees} mederwerkers`)
+
+console.log("Marketing is en leuke afdeling om te werken omdat: " + departments.marketing.description);
+
+console.log("De afdeling Customer Serivce heeft: " + departments["customer-service"].numberOfEmployees + ' medewerkes ')
+
+console.log("Sales is een uitdagende afdeling om te werken als Verkoopmanager: " + departments["sales"].description)
+
+const userInput = prompt('Over welke afdeling wil je meer informatie? Kies uit: [marketing / sales / customer-service]');
+console.log(userInput);
+
+
+let chosenDepartment;
+
+if (userInput === "marketing") {
+    chosenDepartment = departments.marketing;
+} else if (userInput === "sales") {
+    chosenDepartment = departments.sales;
+} else if (userInput === "customer-service") {
+    chosenDepartment = departments["customer-service"];
+} else {
+    console.log("Ongeldige keuze. Kies marketing, sales of customer serivce.")
+}
+if (chosenDepartment) {
+    console.log(`Je koos ${userInput}. ${chosenDepartment.description}`);
+}
